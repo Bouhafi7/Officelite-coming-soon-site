@@ -151,7 +151,7 @@ header .container {
   position: absolute;
   right: -70%;
   top: -90%;
-  background-image: url(../assets/home/bg-pattern-header.svg);
+  background-image: url(assets/home/bg-pattern-header.svg);
   background-repeat: no-repeat;
 }
 @media (max-width: 1500px) {
@@ -178,7 +178,7 @@ header .container {
 
 footer {
   background-color: #25293a;
-  background-image: url(../assets/home/bg-pattern-footer.svg);
+  background-image: url(assets/home/bg-pattern-footer.svg);
   background-size: 70%;
   background-position: left;
   background-repeat: no-repeat;
@@ -312,7 +312,7 @@ footer .container .cards .card:nth-of-type(2) button:hover a {
   }
 }
 footer .container .cards .card:nth-of-type(2) {
-  background-image: url(../assets/home/bg-pattern-pricing.svg);
+  background-image: url(assets/home/bg-pattern-pricing.svg);
   background-repeat: no-repeat;
   background-position: center -40vh;
 }
