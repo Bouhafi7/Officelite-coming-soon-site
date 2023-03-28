@@ -25,7 +25,7 @@ Users should be able to:
 ### Links
 
 -   Solution URL: [Github](https://github.com/Bouhafi7/Officelite-coming-soon-site)
--   Live Site URL: [Soon](Render)
+-   Live Site URL: [Render](https://officelite-coming-soon-site.onrender.com/)
 
 ### Built with
 
