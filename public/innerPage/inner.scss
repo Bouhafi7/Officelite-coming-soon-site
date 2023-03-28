@@ -1,0 +1,259 @@
+@use '../../sass/mixins' as * ;
+
+body{
+    position: relative;
+    &::before{
+        content: "";
+        position: absolute;
+        right: 0;
+        width: 30%;
+        background-color: #26293a;
+        background-image: url(../assets/home/bg-pattern-footer.svg);
+        background-repeat: no-repeat;
+        background-size: 150%;
+        height: 100%;
+        min-height: 100vh;
+        z-index: -1;
+        @include max-md{
+            bottom: 0;
+            width: 100%;
+            min-height: 600px;
+            height: 600px;
+        }
+        @include max-sm{
+            height: 550px;
+            min-height: 550px;
+        }
+    }
+}
+
+header {
+    position: relative;
+    .container {
+        padding-block: 60px;
+        @include max-sm{
+            @include centering;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+
+.home{
+    margin-top: 50px;
+    .container{
+        @include between;
+        gap: 100px;
+        > div{
+            h1{
+                color: #25293a;
+                font-size: 60px;
+                max-width: 560px;
+                @include max-lg{
+                    font-size: 50px;
+                    max-width: 480px;
+                }
+                @include max-sm{
+                    font-size: 40px;
+                }
+            }
+            > p{
+                color: #747b95;
+                line-height: 1.5;
+                max-width: 480px;
+                font-weight: 500;
+                margin: 30px 0 25px;
+            }
+    
+            .coming-in{
+                @include between;
+                div {
+                    h4{
+                        color: #25293a;
+                        letter-spacing: 5px;
+                        text-transform: uppercase;
+                        margin-bottom: 20px;
+                        span{
+                            color: #5275ff;
+                        }
+                    }
+                    .countdown{
+                        @include between;
+                        gap: 10px;
+                        > div {
+                            text-align:  center;
+                            background-color: #edf0ff;
+                            color: rgba(255,255,255,.7);
+                            padding: 35px 0;
+                            border-radius: 15px;
+                            width: 135px;
+                            @include max-lg{
+                                width: calc(100% / 4 - -80px);
+                            }
+                            @include max-md{
+                                flex-wrap: nowrap;
+                                width: 135px;
+                            }
+                            @include max-sm{
+                                padding: 12px 0;
+                                width: 70px;
+                            }
+                            > div {
+                                font-size: 60px;
+                                font-weight: 800;
+                                letter-spacing: 3px;
+                                color: #5275ff;
+                                @include max-sm{
+                                    font-size: 30px;
+                                }
+                            }
+                            p{
+                                color: #747b95;
+                                font-weight: 600;
+                                @include max-sm{
+                                    font-size: 13px;
+                                }
+                            }
+                        }
+                        @include max-lg{
+                            flex-wrap: wrap;
+                        }
+                    }
+                }
+                @include max-sm{
+                    flex-direction: column;
+                    text-align: center;
+                    gap: 30px;
+                }
+            }
+            @include max-md{
+                @include centering;
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        form{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            padding: 30px;
+            border-radius: 10px;
+            gap: 15px;
+            box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            margin-right: 100px;
+            div {
+                position: relative;
+                input{
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+                    font-weight: 500;
+                    padding: 15px 35px 15px 15px;
+                    font-size: 16px;
+                    width: 100%;
+                    &:focus{
+                        border-color: #5275ff;
+                    }
+                }
+                .errors{
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 10px;
+                    color: tomato;
+                    display: none;
+                }
+            }
+            details{
+                position: relative;
+                summary{
+                    @include between;
+                    padding: 15px;
+                    font-size: 16px;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+                    font-weight: 700;
+                    cursor: pointer;
+                    span{
+                        margin-left: 10px;
+                        color: #747b9575;
+                    }
+                    i{
+                        color: #5275ff;
+                        transform: rotate(0deg);
+                        transition: all .3s;
+                    }
+                    i.rotate{
+                        transform: rotate(180deg);
+                    }
+                }
+                ul{
+                    border: 1px solid rgba(51,57,80,.15);
+                    box-shadow: 0 3.125em 3.125em -1.5625em rgba(75,92,154,.75);
+                    border-radius: 6px;
+                    position: absolute;
+                    top: calc(100% + 10px);
+                    width: 100%;
+                    background-color: white;
+                    z-index: 1;
+                    li{
+                        @include between;
+                        padding: 20px 30px;
+                        font-size: 15px;
+                        font-weight: 700;
+                        transition: all .2s;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: rgba(0,0,0,.02);
+                        }
+                        &:nth-of-type(2){
+                            border-block: 1px solid rgba(0, 0, 0, 0.3);
+                        }
+                        span{
+                            margin-left: 10px;
+                            color: #747b9575;
+                        }
+                        i{
+                            color: #5275ff;
+                        }
+                        @include max-md{
+                            justify-content: center;
+                            gap: 20px;
+                        }
+                    }
+                }
+            }
+            button{
+                @include btn;
+                color: white;
+                margin-block: 20px;
+                &:hover{
+                    color: #5275ff;
+                }
+            }
+            .sent{
+                position: absolute;
+                bottom: 23px;
+                font-size: 14px;
+                left: 35px;
+                color: green;
+                font-weight: 500;
+            }
+            @include max-sm{
+                width: 100%;
+            }
+            @include max-xl{
+                margin-right: 0;
+            }
+        }
+        @include max-lg{
+            gap: 50px;
+        }
+        @include max-md{
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
+}

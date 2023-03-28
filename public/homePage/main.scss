@@ -1,0 +1,311 @@
+@use '../../sass/mixins' as * ;
+
+header {
+    position: relative;
+    .container {
+        padding-block: 60px;
+        @include max-sm{
+            @include centering;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.home {
+    position: relative;
+    overflow-x: clip;
+    .container{
+        @include centering;
+        gap: 200px;
+        div {
+            h1{
+                color: #353a54;
+                font-size: 50px;
+                max-width: 480px;
+                @include max-lg{
+                    font-size: 40px;
+                    max-width: 350px;
+                }
+                @include max-sm{
+                    font-size: 35px;
+                    line-height: 1.1;
+                }
+            }
+            p{
+                color: #747b95;
+                line-height: 1.5;
+                max-width: 480px;
+                font-weight: 500;
+                margin: 30px 0 25px;
+                @include max-lg{
+                    max-width: 350px;
+                }
+            }
+            button {
+                @include btn;
+            }
+            @include max-sm{
+                text-align: center;
+            }
+        }
+        img {
+            position: relative;
+            @include max-lg{
+                width: 300px;
+            }
+            @include max-sm{
+                width: 200px;
+            }
+        }
+        @include max-xl{
+            gap: 100px;
+        }
+        @include max-md{
+            gap: 70px;
+        }
+        @include max-sm{
+            flex-direction: column-reverse;
+        }
+    }
+    &::before{
+        content: "";
+        width: 2000px;
+        height: 1000px;
+        position: absolute;
+        right: -70%;
+        top: -90%;
+        background-image: url(../assets/home/bg-pattern-header.svg);
+        background-repeat: no-repeat;
+        @include max-xl{
+            right: -100%;
+        }
+        @include max-lg{
+            width: 1500px;
+            right: -80%;
+            top: -180%;
+        }
+        @include max-md{
+            width: 400px;
+            right: 50%;
+            transform: translateX(50%);
+            top: -40%;
+            background-size: contain;
+        }
+    }
+}
+
+footer{
+    background-color: #25293a;
+    background-image: url(../assets/home/bg-pattern-footer.svg);
+    background-size: 70%;
+    background-position: left;
+    background-repeat: no-repeat;
+    margin-top: 40vh;
+    .container {
+        max-height: 65vh;
+        .cards{
+            @include centering;
+            gap: 30px;
+            transform: translateY(-30vh);
+            .card{
+                width: 325px;
+                background-color: white;
+                color: #25293a;
+                padding: 50px 0;
+                border-radius: 15px;
+                text-align: center;
+                box-shadow: 0px 4px 25px 5px rgba(0,0,0,.1);
+                div{
+                    h4{
+                        font-size: 18px;
+                        margin-bottom: 25px;
+                        @include max-lg{
+                            margin-bottom: 10px;
+                        }
+                        @include max-sm{
+                            margin-bottom: 25px;
+                        }
+                    }
+                    h2{
+                        font-size: 60px;
+                        font-weight: 800;
+                    }
+                    p{
+                        font-weight: 500;
+                        margin: 10px 0 50px;
+                        @include max-lg{
+                            margin: 10px 0 20px;
+                        }
+                        @include max-sm{
+                            margin: 10px 0 50px;
+                        }
+                    }
+                    button{
+                        @include lg{
+                            display: none;
+                        }
+                        @include max-sm{
+                            display: none;
+                        }
+                    }
+                }
+                ul{
+                    @include centering;
+                    flex-direction: column;
+                    gap: 20px;
+                    color: #747b95;
+                    margin-bottom: 40px;
+                    @include max-lg{
+                        align-items: start;
+                    }
+                    @include max-sm{
+                        margin-bottom: 40px;
+                        align-items: center;
+                    }
+                }
+                button{
+                    background-color: #e4eaff;
+                    font-size: 15px;
+                    border: 3px solid #e4eaff;
+                    border-radius: 30px;
+                    text-transform: capitalize;
+                    font-weight: 700;
+                    transition: all .2s;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: transparent;
+                    }
+                    a{
+                        padding: 13px 25px;
+                        display: block;
+                        color: #5275ff;
+                    }
+                }
+                > button{
+                    @include max-lg{
+                        display: none;
+                    }
+                    @include max-sm{
+                        display: block;
+                    }
+                }
+                &:nth-of-type(2){
+                    background-color: #5275ff;
+                    color: white;
+                    ul{
+                        color: white;
+                    }
+                    button{
+                        &:hover{
+                            a{
+                                color: white;
+                            }
+                        }
+                    }
+                }
+                > div:first-child{
+                    @include max-sm{
+                        @include centering;
+                        flex-direction: column;
+                    }
+                }
+                &:nth-of-type(2){
+                    background-image: url(../assets/home/bg-pattern-pricing.svg);
+                    background-repeat: no-repeat;
+                    background-position: center -40vh;
+                }
+                @include max-lg{
+                    width: 650px;
+                    display: flex;
+                    text-align: left;
+                    justify-content: space-between;
+                    padding: 40px;
+                    padding-right: 100px;
+                }
+                @include max-sm{
+                    padding: 30px 0;
+                    flex-direction: column;
+                    width: calc(100% - 20px);
+                    align-items: center;
+                }
+            }
+            @include max-lg{
+                flex-direction: column;
+                transform: translateY(-50vh);
+            }
+            @include max-sm{
+                transform: translateY(-30vh);
+            }
+        }
+        .coming-in{
+            @include between;
+            transform: translateY(-15vh);
+            div {
+                h4{
+                    color: white;
+                    letter-spacing: 5px;
+                    text-transform: uppercase;
+                    margin-bottom: 20px;
+                    span{
+                        color: #5275ff;
+                    }
+                }
+                .countdown{
+                    @include between;
+                    gap: 10px;
+                    > div {
+                        text-align:  center;
+                        background-color: #333951;
+                        color: rgba(255,255,255,.7);
+                        padding: 20px 0;
+                        border-radius: 15px;
+                        width: 135px;
+                        @include max-sm{
+                            padding: 12px 0;
+                            width: 65px;
+                        }
+                        > div {
+                            font-size: 60px;
+                            font-weight: 800;
+                            letter-spacing: 3px;
+                            color: white;
+                            @include max-sm{
+                                font-size: 30px;
+                            }
+                        }
+                        p{
+                            @include max-sm{
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+            }
+            button{
+                @include btn;
+            }
+            @include max-lg{
+                transform: translateY(-30vh);
+            }
+            @include max-sm{
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+                transform: translateY(-10vh);
+            }
+        }
+        @include max-lg{
+            max-height: 95vh;
+        }
+        @include max-sm{
+            max-height: fit-content;
+        }
+    }
+    @include max-lg{
+        margin-top: 60vh;
+    }
+    @include max-sm{
+        margin-top: 40vh;
+        background-position: bottom;
+    }
+}
